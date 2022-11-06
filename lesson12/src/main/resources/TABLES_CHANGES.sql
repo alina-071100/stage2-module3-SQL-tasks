@@ -1,8 +1,11 @@
-ALTER TABLE mark DROP CONSTRAINT mark_student_id_fkey CASCADE;
-ALTER TABLE mark DROP CONSTRAINT mark_subject_id_fkey CASCADE;
-ALTER TABLE payment DROP CONSTRAINT payment_type_id_fkey CASCADE;
-ALTER TABLE payment DROP CONSTRAINT payment_student_id_fkey CASCADE;
-ALTER TABLE mark ADD CONSTRAINT mark_student_id_fkey FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE;
-ALTER TABLE mark ADD CONSTRAINT mark_subject_id_fkey FOREIGN KEY (subject_id) REFERENCES subject(id) ON DELETE CASCADE;
-ALTER TABLE payment ADD CONSTRAINT payment_type_id_fkey FOREIGN KEY (type_id) REFERENCES paymenttype(id) ON DELETE CASCADE;
-ALTER TABLE payment ADD CONSTRAINT payment_student_id_fkey FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE;
+alter table MARK drop constraint if exists mark_student_id_fkey;
+
+alter table MARK add constraint mark_student_id_fkey foreign key (student_id) references student(id) on delete cascade;
+
+alter table PAYMENT drop constraint if exists payment_student_id_fkey;
+
+alter table PAYMENT add constraint payment_student_id_fkey foreign key (student_id) references student(id) on delete cascade;
+
+alter table PAYMENT drop constraint if exists payment_type_id_fkey;
+
+alter table PAYMENT add constraint payment_type_id_fkey foreign key (type_id) references paymenttype(id) on delete cascade;
