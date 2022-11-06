@@ -1,7 +1,4 @@
-update SUBJECT set GRADE = 5 where NAME = 'End of Suburbia: Oil Depletion and the Collapse of the American Dream';
-
-update STUDENT set GROUPNUMBER=8 where NAME = 'Tremaine Worvill';
-
-update PAYMENT set AMOUNT = 500, STUDENT_ID = 2 where PAYMENT_DATE > '2021-01-01' and TYPE_ID = 2;
-
-update MARK set MARK = 2 where SUBJECT_ID = 315;
+UPDATE subject SET grade = 5 WHERE name = 'End of Suburbia: Oil Depletion and the Collapse of the American Dream';
+UPDATE student SET groupnumber = 8 WHERE name = 'Tremaine Worvill';
+UPDATE payment SET  amount = 500, student_id = 2 WHERE payment_date > '2021-01-01' AND type_id = 2;
+UPDATE mark SET mark = 2 WHERE subject_id = 315;
