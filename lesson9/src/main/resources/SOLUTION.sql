@@ -1,5 +1,3 @@
-select S.ID, S.NAME, BIRTHDAY, GROUPNUMBER from STUDENT S inner join MARK M on S.ID = M.STUDENT_ID group by S.ID having AVG(MARK) > 8;
-
-select S.ID, S.NAME from STUDENT S inner join MARK M on S.ID = M.STUDENT_ID group by S.ID having min(MARK) > 7;
-
-select S.ID, S.NAME from STUDENT S inner join PAYMENT P2 on S.ID = P2.STUDENT_ID where year(PAYMENT_DATE) = 2019 group by S.ID having count(*) > 2;
+SELECT s.id, avg(m.mark) AS avg_mark FROM student AS s JOIN mark as m ON s.id = m.student_id GROUP BY s.id HAVING avg_mark > 8;
+SELECT s.id, s.name FROM student AS s JOIN mark as m ON s.id = m.student_id GROUP BY (s.id, s.name) HAVING min(m.mark) > 7;
+SELECT s.id, s.name FROM student AS s JOIN payment as p ON s.id = p.student_id WHERE EXTRACT(YEAR FROM p.payment_date) = 2019 GROUP BY (s.id, s.name) HAVING COUNT(*) > 2;
