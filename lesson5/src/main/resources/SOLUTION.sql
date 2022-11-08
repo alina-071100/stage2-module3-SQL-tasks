@@ -1,5 +1,5 @@
 select * from PAYMENT where AMOUNT >= 500;
-SELECT * FROM Student WHERE DATEADD(YEAR, -20, CURRENT_DATE) > birthday;
+SELECT * FROM STUDENT WHERE DATEADD('YEAR', 20, BIRTHDAY) <= current_date;
 
 select * from STUDENT where GROUPNUMBER = 10 AND DATEDIFF(YEAR, BIRTHDAY, NOW()) < 20;
 
